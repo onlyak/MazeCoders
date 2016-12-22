@@ -1,0 +1,17 @@
+Question 3:
+#include <stdio.h>
+int main()
+{
+    int i, j;
+    for(i=12;i>=1;i--)
+    {
+        for(j=1;j<=i;j++)
+        {
+            printf("%c",'A'-1 + i);
+        }   
+    }
+
+    return 0;
+}
+
+What is the output ? And the count for the ouput?

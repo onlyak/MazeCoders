@@ -1,0 +1,16 @@
+Question 1: 
+#include <stdio.h>
+int main()
+{
+  int n,a=0;
+  printf("Enter an number: ");
+  scanf("%d", &n);
+  while(n!=0)
+  {
+      n/=10;             
+      ++a;
+  }
+  printf("%d",a);
+}
+
+what is the output for 875241397??

@@ -1,0 +1,31 @@
+Question 6:
+#include <stdio.h>
+int foo(int);
+ 
+int main()
+{
+    int num;
+    int result;
+    scanf("%d", &num);
+    if (num < 0)
+    {
+        printf("series of negative number is not possible.\n");
+    }
+    else
+    {
+        result = foo(num);
+        printf("The %d number in series series is %d\n", num, result);
+    }
+    return 0;
+}
+int foo(int num)
+{
+    if (num == 0)
+        return 0;
+    else if (num == 1)
+        return 1;
+    else
+        return(foo(num - 1) + foo(num - 2));
+}
+
+what is the value of result for num=15?? 

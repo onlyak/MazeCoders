@@ -1,0 +1,27 @@
+Question 4:
+#include <stdio.h>
+int foo(int, int);
+int main()
+{
+    int a, b, result;
+ 
+    printf("Enter two numbers : ");
+    scanf("%d%d", &a, &b);
+    result = foo(a, b);
+    printf("operation of %d and %d is %d\n", a, b, result);
+    return 0;
+}
+ 
+int foo(int a, int b)
+{
+    int temp = 0;
+ 
+    while (b != 0)
+    {
+        temp += a;
+        b--;
+    }
+    return temp;
+}
+
+what is the  value of result for input 12 and 54??
