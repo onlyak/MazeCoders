@@ -9,7 +9,9 @@ class Hangman:
           
     ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
     imagebase = 'images/hm-'
-    
+    wordlist = []
+    indexes = []
+    count = -1
     def callback(self, widget, guess):
         #print "key - %s was pressed" % guess 
         if guess == 'Quit':
@@ -48,8 +50,15 @@ class Hangman:
 
     def __init__(self):   
 
-        self.gameover = False  
-        self.word = self.getWord()
+        self.gameover = False
+	f = open('data/words.txt')
+	#self.wordlist=[]
+        for word in f :
+		self.wordlist.append(word.rstrip('\n'))
+	self.indexes = random.sample(xrange(0,64), 64)
+	   
+        
+	self.word = self.getWord()
         self.lcaseword = self.word.lower()
         
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)        
@@ -186,15 +195,15 @@ class Hangman:
             self.gameover = True  
 
     def getWord(self):
-        f = open('data/words.txt')
-        list=f.readlines()   
-        f.close()
-        word=""
-        while 1:
-        	word=list[int(random.random() * len(list))].rstrip('\n')
-        	if len(word) >= 4:
-        		break
-        return word
+       
+	self.count = self.count+1        
+	#availaible=self.wordlist
+        #while 1:
+        	#word=list[int(random.random() * len(list))].rstrip('\n')
+        	#if len(word) >= 4:
+        #print wordlist		#break
+	
+        return self.wordlist[self.indexes[self.count]]
 
 if __name__ == "__main__":
     hm = Hangman()  
