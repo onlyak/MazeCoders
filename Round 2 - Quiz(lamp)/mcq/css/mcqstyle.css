@@ -62,6 +62,7 @@ legend{
 	line-height: 30px;
 	font-size: 1.4em;
 	font-weight: 100;
+	-moz-user-select: none;
 }
 
 .table td:nth-child(1){
